@@ -1,79 +1,8 @@
-<template>
-  <div class="users"></div>
-  <div class="container"></div>
-  <section>
-    <h5 class="title">Novo Item</h5>
-    <form @submit.prevent="createUser">
-      <input type="text" placeholder="Item" v-model="form.name" />
-      <input type="number" placeholder="Quantidade" v-model="form.quantity" />
-      <button type="submit">Adicionar</button>
-    </form>
-  </section>
-  <section>
-    <h5 class="title">Lista de Compras</h5>
-    <ul>
-      <li v-for="item in items" :key="item.id">
-        <p>{{ item.name }}</p>
-        <small>{{ item.quantity }}</small>
-        <a class="destroy" @click="destroyUser(item.id)"></a>
-      </li>
-    </ul>
-  </section>
-</template>
+<template></template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import axios from "@/utils/axios";
-
-interface Items {
-  id: string;
-  name: string;
-  quantity: number;
-}
-
-export default defineComponent({
-  data() {
-    return {
-      items: [] as Items[],
-      form: {
-        name: "",
-        quantity: "",
-      },
-    };
-  },
-  created() {
-    this.fetchUsers();
-  },
-  methods: {
-    async fetchUsers() {
-      try {
-        const { data } = await axios.get("/items");
-        this.items = data;
-      } catch (error) {
-        console.warn(error);
-      }
-    },
-    async createUser() {
-      try {
-        const { data } = await axios.post("/items", this.form);
-        this.items.push(data);
-        this.form.name = "";
-        this.form.quantity = "";
-      } catch (error) {
-        console.warn(error);
-      }
-    },
-    async destroyUser(id: Items["id"]) {
-      try {
-        await axios.delete(`/items/${id}`);
-        const itemIndex = this.items.findIndex((items) => items.id == id);
-        this.items.splice(itemIndex, 1);
-      } catch (error) {
-        console.warn(error);
-      }
-    },
-  },
-});
 </script>
 <style scoped>
 .container {
