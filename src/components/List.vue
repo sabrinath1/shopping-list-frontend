@@ -2,6 +2,11 @@
   <section>
     <h5 class="title">Lista de Compras</h5>
     <ul>
+      <div></div>
+      a
+      {{
+        items
+      }}
       <li v-for="item in items" :key="item.id">
         <p>{{ item.name }}</p>
         <small>{{ item.quantity }}</small>
@@ -19,6 +24,10 @@ export default defineComponent({
   data() {
     return {
       items: [] as Items[],
+      form: {
+        name: "",
+        quantity: "",
+      },
     };
   },
   methods: {

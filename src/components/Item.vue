@@ -44,6 +44,7 @@ export default defineComponent({
         this.items.push(data);
         this.form.name = "";
         this.form.quantity = "";
+        console.log(this.items);
       } catch (error) {
         console.warn(error);
       }
