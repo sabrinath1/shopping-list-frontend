@@ -13,11 +13,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-interface Items {
-  id: string;
-  name: string;
-  quantity: number;
-}
+import axios from "@/utils/axios";
+import type { Items } from "@/interfaces/commons";
 
 export default defineComponent({
   data() {
