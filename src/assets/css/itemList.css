@@ -1,0 +1,20 @@
+
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+li {
+  background-color: #2b3a4e;
+  padding: 1.2rem 1rem;
+  border-radius: 1rem;
+  position: relative;
+  list-style: none;
+  color: #8b98a8;
+}

@@ -1,0 +1,36 @@
+.destroy {
+  background-color: #d53e6b;
+  width: 24px;
+  height: 24px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1.3rem;
+}
+
+.destroy:before,
+.destroy:after {
+  content: "";
+  width: 3px;
+  height: 13px;
+  background-color: #ececf6;
+  border-radius: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.destroy:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.destroy:after {
+  transform: translate(-50%, -50%) rotate(130deg);
+}
+
+.destroy:hover {
+  background-color: #984848;
+}
